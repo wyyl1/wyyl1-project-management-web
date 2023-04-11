@@ -1,3 +1,44 @@
+<script lang="ts">
+import { onMounted } from 'vue';
+import UrlTool from '../components/common/UrlTool.vue'
+import Global from '../components//common/Global.vue'
+
+export default {
+    selectedMenu
+}
+
+// 选中菜单
+function selectedMenu(id: string) {
+    // let currentUrl = UrlTool.currentUrl();
+    // let allHrefs = document.querySelectorAll('a.nav-link');
+
+    // for (let i = 0; i < allHrefs.length; i++) {
+    //     let sidebarHref = allHrefs[i].getAttribute('href') + '';
+    //     sidebarHref = noParameterUrl(sidebarHref);
+
+    //     if (currentUrl.indexOf(path) > -1) {
+    //         console.log(currentUrl + ' ' + path)
+    //         allHrefs[i].classList.add('active');
+    //     }
+    // }
+
+    // 根据 id 修改css
+    let aTag = document.getElementById(id);
+    aTag.classList.add('active');
+}
+
+
+function noParameterUrl(url: string) {
+    let index = url.indexOf('?');
+
+    if (index != -1) {
+        return url.substring(0, index);
+    }
+
+    return url;
+}
+</script>
+
 <template>
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Sidebar -->
@@ -27,13 +68,13 @@
                   </a>
                   <ul class="nav nav-treeview">
                       <li class="nav-item">
-                          <a href="/function/index?pageNum=1&pageSize=2" class="nav-link">
+                          <a id="functionPageList" href="/" class="nav-link">
                               <i class="far fa-circle nav-icon"></i>
                               <p>功能列表</p>
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a href="/function/add/" class="nav-link">
+                          <a id="functionAdd" href="/function/add/" class="nav-link">
                               <i class="far fa-circle nav-icon"></i>
                               <p>添加功能</p>
                           </a>

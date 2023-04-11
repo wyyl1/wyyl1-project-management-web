@@ -1,12 +1,11 @@
 <script setup lang="ts">
-
 import MainSidebarContainer from '../../components/MainSidebarContainer.vue'
 import ContentHeader from '../../components/ContentHeader.vue'
-import PageList from '../../components/function/PageList.vue'
+import Add from '../../components/function/Add.vue'
 import { onMounted } from 'vue'
 
 onMounted(() => {
-  MainSidebarContainer.selectedMenu('functionPageList');
+  MainSidebarContainer.selectedMenu('functionAdd');
 })
 
 </script>
@@ -37,12 +36,12 @@ onMounted(() => {
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <ContentHeader >
-      <template v-slot:title>功能列表</template>
+      <template v-slot:title>添加功能</template>
       <template v-slot:path>功能</template>
     </ContentHeader>
     
     <!-- Main content -->
-    <PageList />
+    <Add />
     
   </div>
   <!-- /.content-wrapper -->

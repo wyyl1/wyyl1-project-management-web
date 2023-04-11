@@ -5,13 +5,11 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'functionList',
       component: () => import('../views/function/PageListView.vue')
     },
     {
-      path: '/w',
-      name: 'wyyl1',
-      component: () => import('../wyyl1/Index.vue')
+      path: '/function/add',
+      component: () => import('../views/function/AddView.vue')
     }
   ]
 })
